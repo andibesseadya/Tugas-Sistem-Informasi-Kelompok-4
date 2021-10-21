@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Food Ordering</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="images/logo.svg" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="foods.html">Foods</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="food-search text-center bg-all">
+        <div class="container">
+            
+            <form action="food-search.html" method="POST">
+                <input type="search" name="search" placeholder="Search for Food.." required>
+                <input type="submit" name="submit" value="Search" class="btn btn-primary">
+            </form>
+
+        </div>
+    </section>
+
+
+
+    <!-- Menu Makanan -->
+    <section class="food-menu">
+        <div class="container">
+            <h2 class="text-center"> Semua Menu</h2>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/nasi-goreng.svg" alt="Nasi Goreng" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Special Fried Rice</h4>
+                    <p class="food-price">Rp 59.999</p>
+                    <p class="food-detail">
+                        nasi goreng spesial pakai telur.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/nasi-uduk.svg" alt="Nasi Uduk" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Rice Cooked in Coconut Milk</h4>
+                    <p class="food-price">Rp 39.999</p>
+                    <p class="food-detail">
+                        nasi uduk.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/gado-gado.svg" alt="Gado-Gado" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Mix Vegetables in Peanut Sauce</h4>
+                    <p class="food-price">Rp 49.999</p>
+                    <p class="food-detail">
+                        gado-gado.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/ayam-geprek.svg" alt="Ayam Geprek" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Rice with Chicken Smackdown</h4>
+                    <p class="food-price">Rp 33.777</p>
+                    <p class="food-detail">
+                        nasi ayam geprek.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/mie-kering.svg" alt="Mie Kering" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Crispy Fried Noodle</h4>
+                    <p class="food-price">Rp 33.999</p>
+                    <p class="food-detail">
+                        mie kering.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/bakmi.svg" alt="Mie Ayam" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Chicken Noodle Soup</h4>
+                    <p class="food-price">Rp 23.999</p>
+                    <p class="food-detail">
+                        mie ayam.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Minuman -->
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/vanilla-latte.svg" alt="Vanilla Latte" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Vanilla Latte</h4>
+                    <p class="food-price">Rp 17.999</p>
+                    <p class="food-detail">
+                        Rich, full-bodied espresso blended with creamy steamed milk and vanilla syrup.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/caramel-macchiato.svg" alt="Caramel Macchiato" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Caramel Macchiato</h4>
+                    <p class="food-price">Rp 29.993</p>
+                    <p class="food-detail">
+                        Espresso combined with vanilla-flavoured syrup, milk and caramel sauce over ice.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/juice-avocado.svg" alt="Avocado Juice" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Avocado Juice</h4>
+                    <p class="food-price">Rp 39.990</p>
+                    <p class="food-detail">
+                        the best source of energy and is also rich in potassium.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/lemon-tea.svg" alt="Lemon Tea" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Lemon Tea</h4>
+                    <p class="food-price">Rp 20.006</p>
+                    <p class="food-detail">
+                        refreshing way to get many important vitamins.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/green-tea.svg" alt="Green Tea Latte" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Green Tea Latte</h4>
+                    <p class="food-price">Rp 23.999</p>
+                    <p class="food-detail">
+                        Smooth and creamy matcha.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/signature-choco.svg" alt="Signature Chocolate" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Signature Chocolate</h4>
+                    <p class="food-price">Rp 23.999</p>
+                    <p class="food-detail">
+                        a delicious blend of cocoa beans
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <!-- Snack -->
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/french-fries.svg" alt="French Fries" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>French Fries</h4>
+                    <p class="food-price">Rp 17.999</p>
+                    <p class="food-detail">
+                        tasty, yummy and crispy snacks for you.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/croissant-cake.svg" alt="Croissant" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Croissants</h4>
+                    <p class="food-price">Rp 29.993</p>
+                    <p class="food-detail">
+                        a buttery, flaky crescent shaped pastry.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/cheese-cake.svg" alt="Cheese Cake" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Cheese Cake</h4>
+                    <p class="food-price">Rp 39.990</p>
+                    <p class="food-detail">
+                        sweet dessert consisting of one or more layers.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/beef-tuffle.svg" alt="Beef Truffle Mayo" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Beef Truffle Mayo</h4>
+                    <p class="food-price">Rp 36.006</p>
+                    <p class="food-detail">
+                        beef with omelette, cheese, garlic and truffle mayo sauce.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/garlic-bread.svg" alt="Garlic Bread" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Garlic Bread</h4>
+                    <p class="food-price">Rp 23.999</p>
+                    <p class="food-detail">
+                        a delicious, garlicky, dry seasoning which makes the best garlic bread.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="food-menu-box">
+                <div class="food-menu-img">
+                    <img src="images/menu/fruit-salad.svg" alt="Fruit Salad" class="img-responsive img-curve">
+                </div>
+
+                <div class="food-menu-desc">
+                    <h4>Fruit Salad</h4>
+                    <p class="food-price">Rp 43.999</p>
+                    <p class="food-detail">
+                        made with oranges, peaches, banana, strawberries and other fruit.
+                    </p>
+                    <br>
+
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>          
+        </div>
+    </section>
+
+    <!-- Sosmed -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>Kelompok 4 Sistem Informasi 2021</p>
+        </div>
+    </section>
+
+</body>
+</html>
