@@ -145,3 +145,9 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Contoh data untuk Admin
+-- username : admin
+-- password : admin
+insert into tbl_admin (full_name, username, password) values ('Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3');
