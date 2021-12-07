@@ -37,108 +37,74 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center"> Menu Minuman</h2>
+            <?php 
+                
+                //Create SQL Query to Get foods based on Selected CAtegory
+                $sql2 = "SELECT * FROM tbl_food WHERE category_id=$category_id";
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/vanilla-latte.svg" alt="Vanilla Latte" class="img-responsive img-curve">
-                </div>
+                //Execute the Query
+                $res2 = mysqli_query($conn, $sql2);
 
-                <div class="food-menu-desc">
-                    <h4>Vanilla Latte</h4>
-                    <p class="food-price">Rp 17.999</p>
-                    <p class="food-detail">
-                        Rich, full-bodied espresso blended with creamy steamed milk and vanilla syrup.
-                    </p>
-                    <br>
+                //Count the Rows
+                $count2 = mysqli_num_rows($res2);
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                //CHeck whether food is available or not
+                if($count2>0)
+                {
+                    //Food is Available
+                    while($row2=mysqli_fetch_assoc($res2))
+                    {
+                        $id = $row2['id'];
+                        $title = $row2['title'];
+                        $price = $row2['price'];
+                        $description = $row2['description'];
+                        $image_name = $row2['image_name'];
+                        ?>
+                        
+                        <div class="food-menu-box">
+                            <div class="food-menu-img">
+                                <?php 
+                                    if($image_name=="")
+                                    {
+                                        //Image not Available
+                                        echo "<div class='error'>Image not Available.</div>";
+                                    }
+                                    else
+                                    {
+                                        //Image Available
+                                        ?>
+                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Vanilla Latte" class="img-responsive img-curve">
+                                        
+                                        <?php
+                                    }
+                                ?>
+                                
+                            </div>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/caramel-macchiato.svg" alt="Caramel Macchiato" class="img-responsive img-curve">
-                </div>
+                            <div class="food-menu-desc">
+                                <h4><?php echo $title; ?></h4>
+                                <p class="food-price">$<?php echo $price; ?></p>
+                                <p class="food-detail">
+                                    <?php echo $description; ?>
+                                </p>
+                                <br>
 
-                <div class="food-menu-desc">
-                    <h4>Caramel Macchiato</h4>
-                    <p class="food-price">Rp 29.993</p>
-                    <p class="food-detail">
-                        Espresso combined with vanilla-flavoured syrup, milk and caramel sauce over ice.
-                    </p>
-                    <br>
+                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+                            </div>
+                        </div>
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                        <?php
+                    }
+                }
+                else
+                {
+                    //Food not available
+                    echo "<div class='error'>Food not Available.</div>";
+                }
+            
+            ?>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/juice-avocado.svg" alt="Avocado Juice" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Avocado Juice</h4>
-                    <p class="food-price">Rp 39.990</p>
-                    <p class="food-detail">
-                        the best source of energy and is also rich in potassium.
-                    </p>
-                    <br>
-
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/lemon-tea.svg" alt="Lemon Tea" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Lemon Tea</h4>
-                    <p class="food-price">Rp 20.006</p>
-                    <p class="food-detail">
-                        refreshing way to get many important vitamins.
-                    </p>
-                    <br>
-
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/green-tea.svg" alt="Green Tea Latte" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Green Tea Latte</h4>
-                    <p class="food-price">Rp 23.999</p>
-                    <p class="food-detail">
-                        Smooth and creamy matcha.
-                    </p>
-                    <br>
-
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/signature-choco.svg" alt="Signature Chocolate" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Signature Chocolate</h4>
-                    <p class="food-price">Rp 23.999</p>
-                    <p class="food-detail">
-                        a delicious blend of cocoa beans
-                    </p>
-                    <br>
-
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+            
             <div class="clearfix"></div>          
         </div>
     </section>
