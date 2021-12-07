@@ -56,7 +56,7 @@
                     
                     <?php
                 }
-            } 
+            }
             else{
                 // categories tidak ada
                 echo "<div class='error'>category not added.</div>";
