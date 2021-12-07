@@ -3,7 +3,15 @@
     <!-- Search Bar -->
     <section class="food-search text-center bg-all">
         <div class="container">
-            <h2>Foods on Your Search <a href="#" class="text-white">"Fries"</a></h2>
+            <?php 
+            
+                //Get the search keyword
+                $search = $_POST['search'];
+
+            ?>
+
+            <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
+        
         </div>
     </section>      
 
@@ -12,107 +20,80 @@
         <div class="container">
             <h2 class="text-center"> Menu Makanan</h2>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/nasi-goreng.svg" alt="Nasi Goreng" class="img-responsive img-curve">
-                </div>
+            <?php
+         
+                //Sql Query to get foods based on search keyword
+                $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'"; 
 
-                <div class="food-menu-desc">
-                    <h4>Special Fried Rice</h4>
-                    <p class="food-price">Rp 59.999</p>
-                    <p class="food-detail">
-                        nasi goreng spesial pakai telur.
-                    </p>
-                    <br>
+                //Execute the query
+                $res = mysqli_query($conn, $sql);
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                //Count Rows
+                $count = mysqli_num_rows($res);
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/nasi-uduk.svg" alt="Nasi Uduk" class="img-responsive img-curve">
-                </div>
+                //check whether food available of not 
+                if($count>0)
+                {
+                    //food available
+                    while($row=mysqli_fetch_assoc($res))
+                    {
+                        // get the details
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $price = $row['price'];
+                        $description = $row['description'];
+                        $image_name = $row['image_name'];
+                        ?>
 
-                <div class="food-menu-desc">
-                    <h4>Rice Cooked in Coconut Milk</h4>
-                    <p class="food-price">Rp 39.999</p>
-                    <p class="food-detail">
-                        nasi uduk.
-                    </p>
-                    <br>
+                        <div class="food-menu-box">
+                            <div class="food-menu-img">
+                                <?php 
+                                
+                                    // check whether image name is available or not
+                                    if($image_name=="")
+                                    {
+                                        // image not available
+                                        echo "<div class='error'>Image not Available.</div>";
+                                    }
+                                    else
+                                    {
+                                        // image available 
+                                        ?>
+                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Nasi Goreng" class="img-responsive img-curve">
+                                        <?php
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                                    }
+                                
+                                ?>
+                                
+                            </div>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/gado-gado.svg" alt="Gado-Gado" class="img-responsive img-curve">
-                </div>
+                            <div class="food-menu-desc">
+                                <h4><?php echo $title; ?></h4>
+                                <p class="food-price">Rp<?php echo $price; ?></p>
+                                <p class="food-detail">
+                                    <?php echo $description; ?>
+                                </p>
+                                <br>
 
-                <div class="food-menu-desc">
-                    <h4>Mix Vegetables in Peanut Sauce</h4>
-                    <p class="food-price">Rp 49.999</p>
-                    <p class="food-detail">
-                        gado-gado.
-                    </p>
-                    <br>
+                                <a href="order.html" class="btn btn-primary">Order Now</a>
+                            </div>
+                        </div>
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/ayam-geprek.svg" alt="Ayam Geprek" class="img-responsive img-curve">
-                </div>
+                        <?php
+                    }
+                }
+                else
+                {
+                    // food not available
+                    echo "<div class='error'>Food not found.</div>";
+                }
 
-                <div class="food-menu-desc">
-                    <h4>Rice with Chicken Smackdown</h4>
-                    <p class="food-price">Rp 33.777</p>
-                    <p class="food-detail">
-                        nasi ayam geprek.
-                    </p>
-                    <br>
+            ?>
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/mie-kering.svg" alt="Mie Kering" class="img-responsive img-curve">
-                </div>
 
-                <div class="food-menu-desc">
-                    <h4>Crispy Fried Noodle</h4>
-                    <p class="food-price">Rp 33.999</p>
-                    <p class="food-detail">
-                        mie kering.
-                    </p>
-                    <br>
-
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu/bakmi.svg" alt="Mie Ayam" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Noodle Soup</h4>
-                    <p class="food-price">Rp 23.999</p>
-                    <p class="food-detail">
-                        mie ayam.
-                    </p>
-                    <br>
-
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
             <div class="clearfix"></div>          
         </div>
     </section>

@@ -12,16 +12,20 @@
             $res = mysqli_query($conn, $sql);
             $count = mysqli_num_rows($res);
 
-            if($count>0){
-                while($row=mysqli_fetch_assoc($res)){
+            if($count>0)
+            {
+                while($row=mysqli_fetch_assoc($res))
+                {
                     $id = $row['id'];
                     $title = $row['title'];
                     $image_name = $row['image_name'];
                     ?>
-                    <a href="category-foods.html">
+
+                    <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
                         <div class="box-3 float-container">
                             <?php
-                            if($image_name==""){
+                            if($image_name=="")
+                            {
                                 echo"<div class='error'>image not found.</div>";
                             }
                             else{

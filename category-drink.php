@@ -1,9 +1,33 @@
 <?php include('partials-front/menu.php'); ?>
 
+<?php 
+    // check whether id is passed or not
+    if(isset($_GET['category_id']))
+    {
+        // category id is set and get the id
+        $category_id = $_GET['category_id'];
+        // Get the category title based on category ID
+        $sql = "SELECT title FROM tbl_category WHERE id=$category_id";
+
+        $res = mysqli_query($conn, $sql);
+
+        $row = mysqli_fetch_assoc($res);
+
+        $category_title = $row['title'];
+    }
+    else
+    {
+        //category not passed
+        //redirect to home page 
+        header('location:'.SITEURL);
+    } 
+
+
+?>
     <!-- Banner -->
     <section class="food-search text-center bg-drink">
         <div class="container">            
-            <h2><a href="#" class="text-white">"Drink"</a> Category </h2>
+        <h2><a href="#" class="text-white"> Category </a><?php echo $category_title; ?></h2>
         </div>
     </section>
 

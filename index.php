@@ -4,7 +4,7 @@
     <section class="food-search text-center bg-all">
         <div class="container">
             
-            <form action="food-search.html" method="POST">
+            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
@@ -24,30 +24,36 @@
             $res = mysqli_query($conn, $sql);
 
             $count = mysqli_num_rows($res);
-            if($count>0){
+            
+            if($count>0)
+            {
                 // categories ada
-                while($row=mysqli_fetch_assoc($res)){
+                while($row=mysqli_fetch_assoc($res))
+                {
                     $id = $row['id'];
                     $title = $row['title'];
                     $image_name = $row['image_name'];
                     ?>
-                      <a href="category-foods.html">
-                               <div class="box-3 float-container">
-                                   <?php
-                                   if($image_name==""){
-                                       echo "<div class='error'>image not available</div>";
-                                   }
-                                   else{
-                                       ?>
-                                       <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Foods" class="img-responsive img-curve">
-                                       <?php
-                                   }
-                                   ?>
+                        
+                    <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>;">
+                        <div class="box-3 float-container">
+                            <?php
+                                if($image_name=="")
+                                {
+                                    echo "<div class='error'>image not available</div>";
+                                }
+                                else
+                                {
+                                    ?>
+                                    <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Foods" class="img-responsive img-curve">
+                                    <?php
+                                }
+                            ?>
                             
-
-                              <h3 class="float-text text-white"><?php echo $title; ?></h3>
-                             </div>
-                            </a>
+                            <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                        </div>
+                    </a>
+                    
                     <?php
                 }
             }

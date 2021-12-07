@@ -4,7 +4,7 @@
     <section class="food-search text-center bg-all">
         <div class="container">
             
-            <form action="food-search.html" method="POST">
+            <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
@@ -21,20 +21,27 @@
 
             <?php
             $sql = "SELECT * FROM tbl_food WHERE active='yes'";
+
             $res = mysqli_query($conn, $sql);
+            
             $count = mysqli_num_rows($res);
-            if($count>0){
-                while($ros=mysqli_fetch_assoc($res)){
+             
+            if($count>0)
+            {
+                while($row=mysqli_fetch_assoc($res))
+                {
                     $id = $row['id'];
                     $title = $row['title'];
-                    $description = $row['description'];
                     $price = $row['price'];
+                    $description = $row['description'];
                     $image_name = $row['image_name'];
                     ?>
                     <div class="food-menu-box">
+                        
                 <div class="food-menu-img">
                     <?php
-                    if($image_name==""){
+                    if($image_name=="")
+                    {
                         echo "<div class='error'>image not available.</div>";
                     }
                     else{
