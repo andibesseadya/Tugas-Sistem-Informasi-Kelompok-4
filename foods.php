@@ -25,11 +25,8 @@
             $res = mysqli_query($conn, $sql);
             
             $count = mysqli_num_rows($res);
-             
-            if($count>0)
-            {
-                while($row=mysqli_fetch_assoc($res))
-                {
+            if($count>0){
+                while($row=mysqli_fetch_assoc($res)){
                     $id = $row['id'];
                     $title = $row['title'];
                     $price = $row['price'];
@@ -62,7 +59,7 @@
                     </p>
                     <br>
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                    <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 

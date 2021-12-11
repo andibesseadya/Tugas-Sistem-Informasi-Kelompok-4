@@ -115,7 +115,7 @@ fieldset{
 }
 
 .bg-food{
-    background-image: url(../images/2.svg);
+    background-image: url(../images/2.png);
 }
 
 .bg-drink{
@@ -215,6 +215,12 @@ fieldset{
 .order-label{
     margin-bottom: 1%; 
     font-weight: bold;
+}
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
 }
 
 
